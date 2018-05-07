@@ -4,6 +4,11 @@
 		box-shadow: rgb(150,150,150) 3px 3px 10px;
 	}
 
+	.img1{
+            width: 100%;
+            height: auto;
+          }
+
 	.panel-heading:hover{
 		border-radius: 0px 0px 5px 5px;
 	}
@@ -14,7 +19,7 @@
 
 	body{
 		margin-top: 60px;
-		background-image: url('../img/figuras_fondo.png');
+		/*background-image: url('../img/figuras_fondo.png');*/
 	}
 
 	.navbar{
@@ -37,8 +42,8 @@
 	.navbar-default .navbar-nav>li>a.ingresar{
 	    color: #ff9800;
 	    font-size: 14px;
-	    text-decoration: underline;
-	    /*font-weight: bolder;*/
+	    /*text-decoration: underline;*/
+	    font-weight: bolder;
 	}
 
 	.navbar-default .navbar-nav>li>a.ingresar:hover{
@@ -85,7 +90,7 @@
 	  	margin-left: 3px;
 	  	font-size: 12px;
 	  	background-color: #ff6310 important!;
-	  	box-shadow: 0 3px 0 0 #cb171e;
+	  	/*box-shadow: 0 3px 0 0 #cb171e;*/
   	}
 
   	.inicia{
@@ -96,11 +101,44 @@
 
 
 
+	#cursos{
+
+		background-image: url('../img/background-1.jpg');
+		padding: 25px;
+	}
+
+	#quienes-somos{
+
+		background-color: #ffffff;
+		padding: 25px;
+	}
+
+	#experiencias{
+
+		background-image: url('../img/background-2.jpg');
+		padding: 25px;
+	}
+
+	#contacto{
+
+		background-color: #f3f3f6;
+		/*background-color: #f2f2e8;*/
+		padding: 25px;
+	}
+
+
+	#contacto p{
+	font-size: 17px;
+	text-align: justify;
+	}
+
+
 	/******** carousel-slides ********/
 	.item{
 		background-image: url('../img/figuras_fondo.png');
 	}
 
+	/*ojo*/
 	.carousel{
 		border-bottom: solid 2px #dfdfdf;
 	}
@@ -122,8 +160,12 @@
 	}
 
 	.form-control{
-		background-color: #f3f3f6;
+		/*background-color: #f3f3f6;*/
+		background-color: #ffffff;
+		border-radius: 10px !important;
 	}
+
+
 
 	textarea:focus, textarea.form-control:focus, input.form-control:focus, input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=number]:focus, [type=text].form-control:focus, [type=password].form-control:focus, [type=email].form-control:focus, [type=tel].form-control:focus, [contenteditable].form-control:focus {
 	    -webkit-box-shadow: inset 0 -2px 0 #7fa57b;
@@ -164,11 +206,11 @@
 		margin-top: 1px;
 	}
 
-	footer{
+	/*footer{
 		border-top: solid 1px #dfdfdf;
 		background-color: #668933;
 		height: auto;
-	}
+	}*/
 	/******** home ********/
 
 	/* footer social icons */

@@ -11,6 +11,8 @@
 |
 */
 
+//HomePage QuetzalEdu
+
 Route::get('/', function () {
     return view('index.index');
 });
@@ -19,6 +21,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//login con facebook
+//Login con facebook
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('facebook.login');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');

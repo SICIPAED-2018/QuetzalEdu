@@ -8,7 +8,10 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('img/quetzaledu_icon.ico')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('bootstrap-3.3.7/css/bootstrap.min.css')}}"/>
     <link rel="stylesheet" type="text/css" href="{{asset('css/main.css')}}" />
-	<title>QuetzalEdu | @yield('title', 'Mejoremos Juntos la Educación')</title>
+    <link rel="stylesheet" type="text/css" href="{{asset('font-awesome-4.7.0/css/font-awesome.min.css')}}"/>
+	<title>
+        QuetzalEdu | @yield('title', 'Mejoremos Juntos la Educación')
+    </title>
 </head>
 <body>
 	<header>

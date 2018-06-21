@@ -110,7 +110,7 @@
         <div class="container">
           <div class="col-lg-12" style="text-align: center;">
             <h2 style="color: #113D69;font-weight: bold;">¿Quiénes somos?</h2>
-            <hr>
+            <p></p>
             <div class="row" style="text-align: justify;">
               <div class="col-lg-6">
                 <center>

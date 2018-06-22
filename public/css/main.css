@@ -99,14 +99,15 @@
   	}
 	/********** navbar-styles **********/
 
-
+	#fondo_registro{
+		background-image: url('../img/fondo_registro2.png');
+		background-repeat: no-repeat !important;
+        background-size: 100% auto !important;
+	}
 
 	#cursos{
-
 		background-image: url('../img/background-1.png');
 		padding: 25px;
-		
-
 	}
 
 	#quienes-somos{

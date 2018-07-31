@@ -16,7 +16,7 @@ class UserType
     public function handle($request, Closure $next)
     {
         if(Auth::user()->type==1)
-            return response()->view('admin.home');
+            return response()->view('admin.layouts.main');
         if(Auth::user()->type==2)
             return response()->view('instructor.home');
         if(Auth::user()->type==3)

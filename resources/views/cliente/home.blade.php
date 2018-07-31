@@ -27,21 +27,25 @@
 
              <div class="panel panel-default">
                <button class="btn btn-default btn-block" type="button" data-toggle="collapse" data-target="#footwear1" aria-expanded="false" aria-controls="footwear" style="background-color: #7D97A5; color: #FFF; text-align: left;">
-                <span class="fa fa-users"></span> Mis Grupos
+                <span class="fa fa-th-large"></span>  Mis Cursos
                </button>
                <div class="collapse" id="footwear1">
                 <p>Algo de texto...</p>
               </div>
 
-              <button class="btn btn-default btn-block" type="button" data-toggle="collapse" data-target="#footwear2" aria-expanded="false" aria-controls="footwear" style="background-color: #7D97A5; color: #FFF; text-align: left;">
+              <!-- <button class="btn btn-default btn-block" type="button" data-toggle="collapse" data-target="#footwear2" aria-expanded="false" aria-controls="footwear" style="background-color: #7D97A5; color: #FFF; text-align: left;">
                 <span class="fa fa-clone"></span> Mis Eventos
                </button>
                <div class="collapse" id="footwear2">
                 <p>Mas texto...</p>
-              </div>
+              </div> -->
 
-              <button class="btn btn-default btn-block" type="button" data-toggle="collapse" data-target="#footwear3" aria-expanded="false" aria-controls="footwear" style="background-color: #7D97A5; color: #FFF; text-align: left;">
+              <!-- <button class="btn btn-default btn-block" type="button" data-toggle="collapse" data-target="#footwear3" aria-expanded="false" aria-controls="footwear" style="background-color: #7D97A5; color: #FFF; text-align: left;">
                 <span class="fa fa-file-image-o"></span> Mis Fotos
+               </button> -->
+
+               <button class="btn btn-default btn-block" type="button" style="background-color: #7D97A5; color: #FFF; text-align: left;">
+                <span class="fa fa-clipboard"></span> Simulador de exámenes de oposición
                </button>
 
                <div class="collapse" id="footwear3">

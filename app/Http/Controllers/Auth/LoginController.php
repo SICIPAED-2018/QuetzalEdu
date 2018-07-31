@@ -68,12 +68,12 @@ class LoginController extends Controller
             $user->name = $user_facebook->getName();
             $user->email = $user_facebook->getEmail();
             $user->facebook_id = $user_facebook->getId();
+            $user->type = 3;
             $user->save();
 
             /*auth()->login($user);
             return Redirect::to('/home');*/ 
         }
-
             auth()->login($user);
             return Redirect::to('/home');
     }

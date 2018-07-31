@@ -11,26 +11,31 @@
         QuetzalEdu | @yield('title', 'Iniciar Sesión')
     </title>
     <style type="text/css">
-        body{
+        /*body{
             background-image: url('img/background-login.png') !important;
             background-repeat: no-repeat !important;
             background-size: 100% auto !important;
-        }
+        }*/
+        .fondo{ 
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+          }
     </style>
 </head>
-<body>
+<body background="{{asset('img/background-login.png')}}" class="fondo">
     <div class="container">
        <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="col-md-4">                  
                 </div>
                 <div class="col-md-4">
-                    <div class="contenedor" style="margin-top: 115px;background-color: rgba(255,255,255,.8);padding: 25px;">
+                    <div class="contenedor" style="margin-top: 95px;background-color: rgba(255,255,255,.8);padding: 25px;">
                         <center>
                             <div class="col-md-offset-1 col-md-10" style="margin-bottom: 25px;">
                             <a href="{{url('/')}}"><img src="{{asset('img/logotipo_quetzaledu_blanco.png')}}" class="img-responsive"></a>
                             </div>
-                            <!-- <p style="color: #113D69;">Por favor, ingrese sus credenciales para iniciar sesión.</p> -->
                         </center>
                         <br>
                         <form method="POST" action="{{ route('login') }}">
@@ -41,8 +46,8 @@
                                 <span class="input-group-addon" id="basic-addon2"> <i class="fa fa-envelope"></i> </span>
                                 </div>
                                 @if ($errors->has('email'))
-                                    <span class="invalid-feedback" style="color: red;font-size: 13px;">
-                                        &nbsp; {{ $errors->first('email') }}
+                                    <span class="invalid-feedback" style="color: red;font-size: 14px;">
+                                         {{ $errors->first('email') }}
                                     </span>
                                 @endif
                             </div>

@@ -1,5 +1,9 @@
 	/********** navbar-styles **********/
 
+	.panel-default>.panel-heading {
+		background-color: #285675;
+	}
+
 	.panel-default:hover{
 		box-shadow: rgb(150,150,150) 3px 3px 10px;
 	}

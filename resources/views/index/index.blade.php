@@ -33,14 +33,14 @@
             </center> 
           </div>
         </div>
-         <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left"></span>
             <span class="sr-only">Previous</span>
-         </a>
-         <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
             <span class="glyphicon glyphicon-chevron-right"></span>
             <span class="sr-only">Next</span>
-         </a>
+          </a>
       </div>
   <!-- carousel-slide./ -->
   <!-- /.cursos -->
@@ -96,7 +96,7 @@
                     </center>
                     <div class="panel-heading" style="background-color: #4FA9A2;border-radius: 0px 0px 10px 10px;border-top: solid 5px #fff;">
                         <h5 style="color: #000;"> Exámenes de oposición</h5>
-                        <a href="http://www.quetzaledu.com.mx/CursoCompetenciasDocentes" class="btn btn-default" style="background-color: #92CBD5;color: #fff;"> Ver Curso </a>
+                        <a href="" class="btn btn-default" style="background-color: #92CBD5;color: #fff;"> Ver Curso </a>
                     </div>
                 </div>
               </div>
@@ -116,7 +116,7 @@
                 <center>
                    <img src="{{asset('img/SICIPAED_LOGO.png')}}" class="img-responsive">
                 </center>
-                <h4 style="color: #113D69;font-weight: bold;">¿Quiénes Somos?</h4>
+                <h4 style="color: #113D69;font-weight: bold;">SICIPAED</h4>
                 <p>SICIPAED S. de R.L. de C.V. es una empresa de investigación y desarrollo de software desde su función en 2010. SICIPAED se encuentra en un continuo proceso de crecimiento a base de proveer a sus clientes con soluciones y servicios de Tecnologías de la Información de la más alta calidad y rentabilidad.</p>
               </div>
               <div class="col-lg-6">
@@ -207,7 +207,7 @@
                   <textarea class="form-control" id="comments" name="mensaje" placeholder=" Mensaje:" rows="5" required ></textarea>
                   <br>
                   <div>
-                    <input type="submit" name="Enviar" class="btn btn-default" style="padding-left: 55px;padding-right: 55px;background-color: #cb171e;color: #fff;">
+                    <input type="submit" name="Enviar" class="btn btn-primary" style="padding-left: 55px;padding-right: 55px;background-color: #0071BC;">
                   </div>
                 </form>
               </div>

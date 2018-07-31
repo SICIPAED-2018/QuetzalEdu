@@ -12,8 +12,22 @@
         QuetzalEdu | @yield('title', 'Mejoremos Juntos la Educación')
     </title>
 
+    <style type="text/css">
+        /*body{
+            background-image: url('img/background-login.png') !important;
+            background-repeat: no-repeat !important;
+            background-size: 100% auto !important;
+        }*/
+        .fondo{ 
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+          }
+    </style>
+
 </head>
-<body id="fondo_registro">
+<body background="{{asset('img/fondo_registro2.png')}}" class="fondo">
   <header>
   @include('index.layouts.partials.nav')
   </header>
@@ -22,46 +36,72 @@
         <div class="row">
           <div class="col-md-3"></div>
           <div class="col-md-6" style="padding-left: 55px;padding-right: 55px;">
-            <div class="registro_container" style="background-color: #eee;padding: 15px;margin-top: 35px;border-radius: 10px;padding-top: 1px;margin-bottom: 35px;">
+            <div class="registro_container" style="background-color: #eee;padding: 15px;margin-top: 55px;border-radius: 10px;padding-top: 1px;margin-bottom: 35px;padding-top: 15px;padding-bottom: 15px;padding-left: 35px;padding-right: 35px;">
               <center>
                 <h3 style="font-weight: bold;">Regístrarse</h3>
               </center>
-              <form method="POST" action="">
-              <div class="form-group col-md-6" style="padding-left: 0px !important;">
-                <input type="text" name="" class="form-control" required placeholder="Apellido paterno">
+              <p class="text-center">¿Ya tienes cuenta? <a href="{{url('login')}}">Inicia Sesión</a></p>
+
+              <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
+              @csrf
+              <!-- <div class="form-group col-md-6" style="padding-left: 0px !important;">
+                <input type="text" name="" class="form-control" required placeholder="Apellido paterno" autofocus>
               </div>
               <div class="form-group col-md-6" style="padding-right: 0px !important;">
                 <input type="text" name="" class="form-control" required placeholder="Apellido materno">
               </div>
               <div class="form-group">
                 <input type="text" name="" class="form-control" placeholder="Nombre(s)" >
+              </div> -->
+              <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                <input type="text" name="name" class="form-control" placeholder="Nombre de usuario" value="{{ old('name') }}" autofocus="" required="">
+                @if ($errors->has('name'))
+                  <span class="help-block">
+                    <strong style="font-size: 12px;color: red;"> &nbsp;{{ $errors->first('name') }}</strong>
+                  </span>
+                @endif
               </div>
+
               <div class="form-group">
-                <input type="text" name="" class="form-control" placeholder="Nombre de Usuario">
+                
+                <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Correo electrónico" value="{{ old('email') }}" required="" >
+                @if ($errors->has('email'))
+                  <span class="help-block">
+                    <strong style="font-size: 12;color: red;"> &nbsp;{{ $errors->first('email') }}</strong>
+                  </span>
+                @endif
               </div>
+
+              <!-- <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}"> -->
+                <div class="form-group">
+                <!-- <input type="password" name="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Contraseña" required=""> -->
+                <input type="password" name="password" class="form-control" placeholder="Contraseña" required="">
+                @if ($errors->has('password'))
+                  <span class="help-block">
+                    <strong style="font-size: 12;color: red;">&nbsp;{{ $errors->first('password') }}</strong>
+                  </span>
+                @endif
+              </div>
+
               <div class="form-group">
-                <input type="mail" name="" class="form-control" placeholder="Correo electrónico">
+                <input type="password" id="password-confirm" name="password_confirmation" class="form-control" placeholder="Confirmar contraseña" required="">
               </div>
+
               <div class="form-group">
-                <input type="password" name="" class="form-control" placeholder="Contraseña">
+                <input type="checkbox" name="" style="margin-left: 5px;" checked> Acepto términos y condiciones.
               </div>
-              <div class="form-group">
-                <input type="password" name="" class="form-control" placeholder="Confirmar contraseña">
-              </div>
-              <div class="form-group">
-                <input type="checkbox" name="" style="margin-left: 5px;" checked> Acepto los términos y condiciones.
-              </div>
+
               <button class="btn btn-danger"> Cancelar</button>
               <input type="submit" name="" class="btn btn-success" style="color: #fff;" value="Registrarse">
               </form>
               <br>
               <center>
                 Valoramos tu
-                <a href="http://www.it-world.com.mx/privacidad" style="color:#337ab7;text-decoration:underline;"> privacidad
+                <a href=""> privacidad
                 </a>
                 como si fuera la nuestra.<br>
                 Ante cualquier duda, consulta nuestros 
-                <a href="http://www.it-world.com.mx/terminos" style="color:#337ab7;text-decoration:underline;">Términos de servicio.</a>
+                <a href="">Términos de servicio.</a>
               </center>
             </div>
           </div>

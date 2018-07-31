@@ -9,18 +9,18 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/main.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('font-awesome-4.7.0/css/font-awesome.min.css')}}"/>
 	<title>
-        QuetzalEdu | @yield('title', 'Mejoremos Juntos la Educación')
+        QuetzalEdu - @yield('title', 'Mejoremos Juntos la Educación')
     </title>
 </head>
 <body>
 	<header>
-	@include('index.layouts.partials.nav')
+	   @include('index.layouts.partials.nav')
 	</header>
     <section>
-    @yield('contenido')
+        @yield('contenido')
     </section>
     <footer>
-    @include('index.layouts.partials.footer')
+        @include('index.layouts.partials.footer')
     </footer>
     <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
     <script src="{{asset('bootstrap-3.3.7/js/bootstrap.min.js')}}"></script>

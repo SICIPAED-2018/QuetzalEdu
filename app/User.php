@@ -14,8 +14,11 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+    //TABLA USERS
+
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','facebook_id','type',
     ];
 
     /**

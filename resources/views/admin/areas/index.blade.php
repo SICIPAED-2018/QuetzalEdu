@@ -1,7 +1,7 @@
 <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1 style="font-size: 28px;">
-        <i class="fa fa-th-large"></i>
+        <i class="fa fa-codepen"></i>
         Lista de áreas de conocimiento
         <!-- <small>it all starts here</small> -->
       </h1>
@@ -85,6 +85,7 @@
 		        </div>
 		        <div class="modal-body">
 			        <form class="form-horizontal" enctype="multipart/form-data">
+
 					    <div class="form-group">
 					      <label class="control-label col-sm-2" for="name">Nombre</label>
 					      <div class="col-sm-10">
@@ -93,14 +94,14 @@
 					    </div>
 
 					    <div class="form-group">
-					      <label class="control-label col-sm-2" for="name">Información General</label>
+					      <label class="control-label col-sm-2" for="info">Información General</label>
 					      <div class="col-sm-10">
-					        <input type="text" class="form-control" id="informacion_general" name="informacion_general" ng-model="newArea.informacion_general" autofocus>
+					        <input type="file" class="form-control" id="informacion_general" name="informacion_general" ng-model="newArea.informacion_general" autofocus>
 					      </div>
 					    </div>
 
 					    <div class="form-group">
-					      <label class="control-label col-sm-2" for="name">Video General</label>
+					      <label class="control-label col-sm-2" for="video">Video General</label>
 					      <div class="col-sm-10">
 					        <input type="file" class="form-control" id="video_general" name="video_general" uploader-model="newArea.video_general" autofocus>
 					      </div>
@@ -163,7 +164,7 @@
 		          <h4 class="modal-title"><span class="glyphicon glyphicon-trash"></span> &nbsp;Eliminar usuario</h4>
 		        </div>
 		        <div class="modal-body">
-		         	¿Está seguro de que desea eliminar permanentemente al usuario @{{editArea.name}}?
+		         	¿Está seguro de que desea eliminar permanentemente el área de conocimiento @{{editArea.name}}?
 		        </div> 
 		        <div class="modal-footer">
 		          <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="deleteArea(editArea.id)">Si</button>

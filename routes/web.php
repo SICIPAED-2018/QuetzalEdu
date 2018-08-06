@@ -29,10 +29,17 @@ Route::get('logout', function () {
     return Redirect::to('/');
 });
 
-//SPA ADMINISTRADOR
+//SPA ADMINISTRADOR E INSTRUCTOR CON ANGULARJS
 Route::get('/inicio', function () {
-    return view('admin.inicio');
+	if(Auth::user()->type==1){
+    	return view('admin.home');
+	}
+	else if(Auth::user()->type==2){
+    	return view('instructor.home');
+	}
 });
+
+
 
 // ADMINISTRADOR 
 
@@ -65,3 +72,5 @@ Route::delete('deleteAreas/{id}', 'AreaConocimientoController@deleteAreas');
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('facebook.login');
 
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+
+

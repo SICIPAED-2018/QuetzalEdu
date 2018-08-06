@@ -1,5 +1,3 @@
-
-
 var app = angular.module('myApp', ['ngRoute','angular-loading-bar']);
 
 app.config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
@@ -8,28 +6,22 @@ app.config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
 
 app.config(function($routeProvider) {
   $routeProvider
-
   .when('/', {
     templateUrl : 'inicio',
-    controller  : 'HomeController'
   })
-
   .when('/users', {
     templateUrl : 'users',
     controller  : 'UsersController'
   })
-
   .when('/areas', {
     templateUrl : 'areas',
     controller  : 'AreasController'
   })
-
   .otherwise({redirectTo: '/'});
+
 });
 
-
 app.controller("UsersController",function($scope, $http){
-
   //$scope.mostrarCargando = true;
   console.log("UsersController");
   $scope.users = {};
@@ -48,9 +40,6 @@ app.controller("UsersController",function($scope, $http){
       console.log(err);
       //alert("error");
     });
-
-
-    
   
     $scope.setUser = function(){
     $http.post("http://localhost:8000/setUsers",{
@@ -66,7 +55,6 @@ app.controller("UsersController",function($scope, $http){
       $scope.users = data.data;
       /*$scope.users.push($scope.newUser);*/
       $scope.newUser = {};
-
     },
     function(err){
       console.log(err);
@@ -76,22 +64,14 @@ app.controller("UsersController",function($scope, $http){
     });
     }
 
-
-
-  $scope.selectUser = function(user){
-
+    $scope.selectUser = function(user){
     console.log(user);
     //alert(user);
     $scope.editUser = user;
-
     //$scope.users.push($scope.newUser);
-
     //$scope.users.splice($scope.user);
-
     //$scope.users.splice($user, 1);
   }
-
-
 
   $scope.updateUser = function(dato){
     //$scope.editUser = user;
@@ -101,7 +81,7 @@ app.controller("UsersController",function($scope, $http){
     })
     .then(function(data,status,headers,config){
              // success callback
-             alert('llego aqui');
+             // alert('llego aqui');
              console.log(data);
              $scope.message = "¡Usuario "+$scope.editUser.name+" editado satisfactoriamente!";
              //$scope.message = "Usuario editado satisfactoriamente."
@@ -113,12 +93,7 @@ app.controller("UsersController",function($scope, $http){
     });
     } 
 
-  /*$scope.updateUser = function(){
-
-  };*/
-
   $scope.deleteUser = function(dato){
-    
     $http.delete("http://localhost:8000/deleteUsers/"+dato)
     .then(function(data,status,headers,config){
              // success callback
@@ -134,23 +109,18 @@ app.controller("UsersController",function($scope, $http){
     });
   };
 
-
   $scope.clearMessage = function(){
     $scope.message = "";
     $scope.message_error = "";
   };
-
   });
 
 
+/********************AreasController********************/
 
-
-
-//alert('AreasController');
-
+/* falta agregar files js */
 
 app.controller("AreasController",function($scope, $http){
-
   //$scope.mostrarCargando = true;
   console.log("AreasController");
   $scope.areas = {};
@@ -170,9 +140,6 @@ app.controller("AreasController",function($scope, $http){
       //alert("error");
     });
 
-
-    
-  
     $scope.setArea = function(){
     $http.post("http://localhost:8000/setAreas",{
       area_conocimiento: $scope.newArea.area_conocimiento,
@@ -187,7 +154,6 @@ app.controller("AreasController",function($scope, $http){
       $scope.areas = data.data;
       /*$scope.users.push($scope.newUser);*/
       $scope.newArea = {};
-
     },
     function(err){
       console.log(err);
@@ -197,32 +163,23 @@ app.controller("AreasController",function($scope, $http){
     });
     }
 
-
-
-  $scope.selectArea = function(area){
-
+    $scope.selectArea = function(area){
     console.log(area);
     //alert(user);
     $scope.editArea = area;
-
     //$scope.users.push($scope.newUser);
-
     //$scope.users.splice($scope.user);
-
     //$scope.users.splice($user, 1);
   }
-
-
 
   $scope.updateArea = function(dato){
     //$scope.editUser = user;
     $http.put("http://localhost:8000/updateAreas/"+dato,{
       area_conocimiento: $scope.editArea.area_conocimiento,
-      
     })
     .then(function(data,status,headers,config){
              // success callback
-             alert('llego aqui');
+             //alert('llego aqui');
              console.log(data);
              $scope.message = "¡Area "+$scope.editArea.area_conocimiento+" editada satisfactoriamente!";
              //$scope.message = "Usuario editado satisfactoriamente."
@@ -234,12 +191,7 @@ app.controller("AreasController",function($scope, $http){
     });
     } 
 
-  /*$scope.updateUser = function(){
-
-  };*/
-
-  $scope.deleteArea = function(dato){
-    
+    $scope.deleteArea = function(dato){
     $http.delete("http://localhost:8000/deleteAreas/"+dato)
     .then(function(data,status,headers,config){
              // success callback
@@ -253,13 +205,11 @@ app.controller("AreasController",function($scope, $http){
     function(err){
       alert("error");
     });
-  };
+    };
 
-
-  $scope.clearMessage = function(){
-    $scope.message = "";
-    $scope.message_error = "";
-  };
-
-  });
+    $scope.clearMessage = function(){
+      $scope.message = "";
+      $scope.message_error = "";
+    };
+    });
 

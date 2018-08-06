@@ -67,7 +67,10 @@
 		        <td ng-if="user.type == 2"><span class="label label-info">Instructor</span></td>
 		        <td ng-if="user.type == 3"><span class="label label-success">Docente participante</span></td>
 		        <td style="text-align: center"><a ng-click="selectUser(user)" class="btn btn-warning" data-toggle="modal" data-target="#myModalEdit"> <span class="glyphicon glyphicon-edit"></span> Editar</a>
-		        <a ng-click="selectUser(user)" class="btn btn-danger" data-toggle="modal" data-target="#myModalDelete"><span class="glyphicon glyphicon-trash"></span> Eliminar</a></td>
+		        <a ng-if="user.type == 2" ng-click="selectUser(user)" class="btn btn-danger" data-toggle="modal" data-target="#myModalDelete"><span class="glyphicon glyphicon-trash"></span> Eliminar</a>
+		        <a ng-if="user.type == 3" ng-click="selectUser(user)" class="btn btn-danger" data-toggle="modal" data-target="#myModalDelete"><span class="glyphicon glyphicon-trash"></span> Eliminar</a>
+		        <a ng-if="user.type == 1" class="btn btn-danger" data-toggle="modal" data-target="#myModalDeleteAdmin"><span class="glyphicon glyphicon-trash"></span> Eliminar</a>
+				</td>
 		      </tr>
 		    </tbody>
   		</table>
@@ -178,3 +181,22 @@
 		        </div>
 		      </div>
 		    </div>
+			</div>
+
+			<div class="modal fade" id="myModalDeleteAdmin" role="dialog">
+		    <div class="modal-dialog">
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4 class="modal-title"><span class="glyphicon glyphicon-trash"></span> &nbsp;Eliminar usuario</h4>
+		        </div>
+		        <div class="modal-body">
+		         	No es posible eliminar al administrador del sistema
+		        </div> 
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Aceptar</button>
+		        </div>
+		      </div>
+		    </div>
+			</div>

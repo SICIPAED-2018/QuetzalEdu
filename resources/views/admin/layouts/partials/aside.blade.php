@@ -1,5 +1,5 @@
 <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
+  <aside class="main-sidebar" >
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- Sidebar user panel -->
@@ -72,7 +72,28 @@
         </li>
         <li>
           <a href="#!/areas">
-            <i class="fa fa-th-large"></i> <span>Áreas de conocimiento</span>
+            <i class="fa fa-codepen"></i> <span>Áreas de conocimiento</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i class="fa fa-ravelry"></i> <span>Gestión de contenidos</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i class="fa fa-connectdevelop"></i> <span>Banco de preguntas</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i class="fa fa-shopping-basket"></i> <span>Control de pagos</span>
             <span class="pull-right-container">
             </span>
           </a>

@@ -18,7 +18,7 @@ class UserType
         if(Auth::user()->type==1)
             return response()->view('admin.layouts.main');
         if(Auth::user()->type==2)
-            return response()->view('instructor.home');
+            return response()->view('instructor.layouts.main');
         if(Auth::user()->type==3)
             return response()->view('cliente.home');
         return $next($request);

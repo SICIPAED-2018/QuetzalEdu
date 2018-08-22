@@ -33,12 +33,13 @@
         
           
 
-      </div>
+      			</div>
 			</div>
 			@yield('contenido')
 		</section>
 	</div>
 	<script src="{{ asset('bower_components/jquery/dist/jquery.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('js/examenes.min.js')}}"></script>
 	<script src="{{ asset('bower_components/jquery-ui/jquery-ui.min.js')}}"></script>
 	<script>
 		$.widget.bridge('uibutton', $.ui.button);

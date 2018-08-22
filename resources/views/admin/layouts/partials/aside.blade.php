@@ -85,7 +85,7 @@
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="#!/preguntas">
             <i class="fa fa-connectdevelop"></i> <span>Banco de preguntas</span>
             <span class="pull-right-container">
             </span>

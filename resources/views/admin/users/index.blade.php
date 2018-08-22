@@ -45,7 +45,7 @@
 		      	<!-- <th></th> -->
 		      	<th>N°</th>
 		        <th>Nombre</th>
-		        <th>correo Electrónico</th>
+		        <th>Correo electrónico</th>
 		        <th>Tipo de usuario</th>
 		        <th></th>
 		      </tr>
@@ -57,7 +57,7 @@
 				   	 <h5> <span class="glyphicon glyphicon-info-sign"></span> No se encontraron resultados.</h5>
 				</div>
 		      </div>
-		      <tr ng-repeat="user in users | filter:search:strict">
+		      <tr ng-repeat="user in users | filter:search:startsWith">
 		      	<!-- <td style="text-align: center"><input type="checkbox" name=""></td> -->
 		      	<td><label class="label label-default">@{{$index+1}}</label></td>
 		      	<!-- <td>@{{user.id}}</td> -->
@@ -72,6 +72,10 @@
 		        <a ng-if="user.type == 1" class="btn btn-danger" data-toggle="modal" data-target="#myModalDeleteAdmin"><span class="glyphicon glyphicon-trash"></span> Eliminar</a>
 				</td>
 		      </tr>
+		      <div data-pagination="" data-num-pages="numPages()" 
+			      data-current-page="currentPage" data-max-size="maxSize"  
+			      data-boundary-links="true">
+			  </div>
 		    </tbody>
   		</table>
   		Total de usuarios <label class="label label-warning">@{{users.length}}</label> 
@@ -86,8 +90,8 @@
 		    <div class="modal-dialog">
 		      <!-- Modal content-->
 		      <div class="modal-content">
-		        <div class="modal-header">
-		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <div class="modal-header" style="background-color: #285675;color: #fff;">
+		          <button type="button" class="close" data-dismiss="modal" style="color: #fff;">&times;</button>
 		          <h4 class="modal-title"><span class="glyphicon glyphicon-plus-sign"></span> &nbsp;Agregar usuario</h4>
 		        </div>
 		        <div class="modal-body">
@@ -112,13 +116,13 @@
 					    </div>
 					    <div class="form-group">        
 					      <div class="col-sm-offset-2 col-sm-10">
-					        <button type="submit" class="btn btn-default" ng-click="setUser()" data-dismiss="modal">Aceptar</button>
+					        <button type="submit" class="btn btn-success" ng-click="setUser()" data-dismiss="modal">Aceptar</button>
 					      </div>
 					    </div>
 					 </form>
 		        </div> 
-		        <div class="modal-footer">
-		          <button type="button" class="btn btn-default" data-dismiss="modal"> <span class="glyphicon glyphicon-remove"></span> Cancelar</button>
+		        <div class="modal-footer" style="background-color: #ecf0f5;">
+		          <button type="button" class="btn btn-danger" data-dismiss="modal"> <span class="glyphicon glyphicon-remove"></span> Cancelar</button>
 		        </div>
 		      </div>
 		    </div>
@@ -130,8 +134,8 @@
 		    <div class="modal-dialog">
 		      <!-- Modal content-->
 		      <div class="modal-content">
-		        <div class="modal-header">
-		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <div class="modal-header" style="background-color: #285675;color: #fff;">
+		          <button type="button" class="close" data-dismiss="modal" style="color: #fff;">&times;</button>
 		          <h4 class="modal-title"> <span class="glyphicon glyphicon-edit"></span> Editar usuario</h4>
 		        </div>
 		        <div class="modal-body">
@@ -150,13 +154,13 @@
 					    </div>
 					    <div class="form-group">        
 					      <div class="col-sm-offset-2 col-sm-10">
-					        <button type="submit" class="btn btn-default" ng-click="updateUser(editUser.id)" data-dismiss="modal">Aceptar</button>
+					        <button type="submit" class="btn btn-success" ng-click="updateUser(editUser.id)" data-dismiss="modal">Aceptar</button>
 					      </div>
 					    </div>
 					 </form>
 		        </div> 
-		        <div class="modal-footer">
-		          <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancelar</button>
+		        <div class="modal-footer" style="background-color: #ecf0f5;">
+		          <button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancelar</button>
 		        </div>
 		      </div>
 		    </div>

@@ -67,10 +67,29 @@ Route::put('updateAreas/{id}', 'AreaConocimientoController@updateAreas');
 
 Route::delete('deleteAreas/{id}', 'AreaConocimientoController@deleteAreas');
 
+//GESTION DE BANCO DE PREGUNTAS
+
+Route::resource('/preguntas', 'SimuladorExamenController');
+
+Route::get('getPreguntas', 'SimuladorExamenController@getPreguntas');
+
+Route::post('setPreguntas', 'SimuladorExamenController@setPreguntas');
+
+Route::delete('deletePreguntas/{id}', 'SimuladorExamenController@deletePreguntas');
+
 //LOGIN CON FACEBOOK
 
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('facebook.login');
 
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+
+
+
+
+Route::get('examenes/{id}','SimuladorExamenController@getExamenes');
+
+Route::get('preguntas/examenes/{id}','SimuladorExamenController@getExamenes');
+
+
 
 

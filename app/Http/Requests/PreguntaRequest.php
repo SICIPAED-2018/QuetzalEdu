@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AreaRequest extends FormRequest
+class PreguntaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,8 @@ class AreaRequest extends FormRequest
     public function rules()
     {
         return [
-            'area_conocimiento'=>'required',
-            'informacion_general' => 'required|mimes:pdf',
-            'video_general' => 'required|mimes:mp4',
-            'imagen_general' => 'required|mimes:png'
+            //
+            'pregunta'=>'required',
         ];
     }
 }

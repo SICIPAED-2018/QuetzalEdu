@@ -26,9 +26,7 @@
                         <div class="form-group">
                             <select class="form-control" id="nivel" name="nivel" >
                                 <option disabled selected>Selecciona una opción</option>
-                                @foreach($niveles as $nivel)
-                                    <option value='{{$nivel->id}}'>{{$nivel->nivel_educativo}}</option>
-                                @endforeach()
+
                             </select>
                         </div>
                         <div class="form-group">
@@ -44,7 +42,7 @@
                             <tr>
                                 <td style="border-top: none;">
                                     <div class="form-group">
-                                        <input type="text" name="respuesta[]" class="form-control">
+                                        <input type="text" ng-model="newPregunta.respuesta" class="form-control">
                                     </div>
                                 </td>
                                 <td style="border-top: none;">

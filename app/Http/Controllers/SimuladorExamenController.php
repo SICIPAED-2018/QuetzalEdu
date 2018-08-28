@@ -10,6 +10,8 @@ use App\Examen;
 
 use App\Nivel;
 
+use App\Respuesta;
+
 use App\Http\Requests\PreguntaRequest;
 
 class SimuladorExamenController extends Controller
@@ -42,10 +44,24 @@ class SimuladorExamenController extends Controller
         }
     }
 
-    public function setPreguntas(PreguntaRequest $request){
+    public function setPreguntas(Request $request){
         $pregunta = new Pregunta($request->all());
         $pregunta->examen_id = 1;
         $pregunta->save();
+
+        /*$respuesta = $request->all();
+        $correcta=$request->correcta;
+        for($i=0;$i<=3;$i++){
+          $respuesta = new Respuesta();
+          $respuesta->pregunta_id=$pregunta->id;
+          $respuesta->respuesta=$request->respuesta[$i];
+          if($i!=$correcta[0])
+            $respuesta->correcta=0;
+          else
+            $respuesta->correcta=1;
+          $respuesta->save();
+        }*/
+
         $preguntas = Pregunta::all();
             return response()->json(
                 $preguntas->toArray()
@@ -66,8 +82,8 @@ class SimuladorExamenController extends Controller
     public function create()
     {
         //
-        $niveles = Nivel::all();
-        return view('admin.simulador.create')->with('niveles', $niveles);
+        /*$niveles = Nivel::all();*/
+        return view('admin.simulador.create');/*->with('niveles', $niveles);*/
     }
 
     /**

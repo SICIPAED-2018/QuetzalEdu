@@ -157,20 +157,27 @@ app.controller("AreasController",function($scope, $http){
 
     $scope.setArea = function(){
       var fd = new FormData();
-      var areaCon = $scope.newArea.area_conocimiento;
+      //var areaCon = $scope.newArea.area_conocimiento;
       var infoGen = $scope.newArea.informacion_general;
+      var areaCon = $scope.newArea.area_conocimiento;
+      //var areaImg = $scope.newArea.imagen_general;
+
+      alert(infoGen);
       var vidGen = $scope.newArea.video_general;
       var imgGen = $scope.newArea.imagen_general;
-      fd.append('area_conocimiento', areaCon);
+      //fd.append('area_conocimiento', areaCon);
       fd.append('informacion_general',infoGen);
+      fd.append('area_conocimiento', areaCon);
       fd.append('video_general',vidGen);
       fd.append('imagen_general',imgGen);
+
       $http.post("http://localhost:8000/setAreas", fd,{
       /*area_conocimiento: $scope.newArea.area_conocimiento,
       informacion_general: $scope.newArea.informacion_general,
       video_general: $scope.newArea.video_general*/
       file: angular.identity,
-      headers: {'Content-Type': undefined}
+      headers: {'Content-Type': undefined},
+      //area_conocimiento: $scope.newArea.area_conocimiento,
     })
     .then(function(data,status,headers,config){
       //console.log($scope.newUser);
@@ -179,7 +186,7 @@ app.controller("AreasController",function($scope, $http){
       //$scope.message = "Usuario agregado satisfactoriamente."
       $scope.areas = data.data;
       /*$scope.users.push($scope.newUser);*/
-      $scope.newArea.area_conocimiento = null;
+      /*$scope.newArea.area_conocimiento = null;*/
       $scope.newArea = {};
     },
     function(err){
@@ -243,6 +250,12 @@ app.controller("AreasController",function($scope, $http){
     /*************************SimuladorController***************************/
 
     app.controller("SimuladorController",function($scope, $http, $location){
+
+      /* filtro x primera letra */
+      $scope.startsWith =function(actual, expected) {
+        var lowerStr = (actual + "").toLowerCase();
+        return lowerStr.indexOf(expected.toLowerCase()) === 0;
+      };
       console.log("SimuladorController");
       $scope.preguntas = [];
       $scope.newPregunta = [];
@@ -265,6 +278,7 @@ app.controller("AreasController",function($scope, $http){
       $scope.setPregunta = function(){
         $http.post("http://localhost:8000/setPreguntas",{
           pregunta: $scope.newPregunta.pregunta,
+          respuesta: $scope.newPregunta.respuesta,
           /*email: $scope.newUser.email,
           password: $scope.newUser.password*/
         })

@@ -29,8 +29,6 @@ class AreaConocimientoController extends Controller
 
     public function setAreas(AreaRequest $request){
 
-        dd($request);
-
         $area = new Area($request->all());
         
         $nom = $area->area_conocimiento;
@@ -51,6 +49,8 @@ class AreaConocimientoController extends Controller
 
         }
 
+        
+
         if($request->file('video_general')) {
 
         $file = $request->file('video_general');
@@ -66,6 +66,8 @@ class AreaConocimientoController extends Controller
         $file->move($path, $nombre);
 
         }
+
+        
 
         if($request->file('imagen_general')) {
 

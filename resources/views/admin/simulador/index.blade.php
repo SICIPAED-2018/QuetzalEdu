@@ -34,7 +34,7 @@
 			      <span class="input-group-btn">
 			        <button class="btn btn-default" type="button"> <span class="glyphicon glyphicon-search"></span></button>
 			      </span>
-			      <input type="text" class="form-control" placeholder="Examen" ng-model="search.examen_id">
+			      <input type="text" class="form-control" placeholder="Examen" ng-model="search.examen.tipo_examen">
 			    </div>
 			</div>
 		</div>

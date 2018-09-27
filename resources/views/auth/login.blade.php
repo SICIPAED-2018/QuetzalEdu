@@ -11,11 +11,6 @@
         QuetzalEdu | @yield('title', 'Iniciar Sesión')
     </title>
     <style type="text/css">
-        /*body{
-            background-image: url('img/background-login.png') !important;
-            background-repeat: no-repeat !important;
-            background-size: 100% auto !important;
-        }*/
         .fondo{ 
             background-attachment: fixed;
             background-position: center;
@@ -31,7 +26,7 @@
                 <div class="col-md-4">                  
                 </div>
                 <div class="col-md-4">
-                    <div class="contenedor" style="margin-top: 95px;background-color: rgba(255,255,255,.8);padding: 25px;">
+                    <div class="contenedor" style="margin-top: 95px;background-color: rgba(255,255,255,.8);padding: 25px;border-radius: 5px;">
                         <center>
                             <div class="col-md-offset-1 col-md-10" style="margin-bottom: 25px;">
                             <a href="{{url('/')}}"><img src="{{asset('img/logotipo_quetzaledu_blanco.png')}}" class="img-responsive"></a>

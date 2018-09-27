@@ -25,6 +25,18 @@ app.config(function($routeProvider) {
     templateUrl : 'preguntas/create',
     controller  : 'SimuladorController'
   })
+   .when('/preguntas/:preguntaId/edit', {
+    templateUrl : 'preguntas/preguntaId/edit',
+    controller  : 'SimuladorController'
+  })
+  .when('/cursos', {
+    templateUrl : 'cursos',
+    controller  : ''
+  })
+  .when('/pagos', {
+    templateUrl : 'pagos',
+    controller  : ''
+  })
   .otherwise({redirectTo: '/'});
 
 });
@@ -258,10 +270,13 @@ app.controller("AreasController",function($scope, $http){
       };
       console.log("SimuladorController");
       $scope.preguntas = [];
+      $scope.niveles = [];
+      $scope.respuesta = [];
       $scope.newPregunta = [];
       $scope.editPregunta = [];
       $scope.message = "";
       $scope.message_error = "";
+      $scope.examenes = [];
 
       $http.get("http://localhost:8000/getPreguntas")
         .then(function(data){
@@ -275,10 +290,40 @@ app.controller("AreasController",function($scope, $http){
         });
 
 
+        $http.get("http://localhost:8000/getNiveles")
+        .then(function(data){
+          console.log(data);
+          $scope.niveles = data.data;
+          //$scope.mostrarCargando = false;
+        },
+        function(err){
+          console.log(err);
+          //alert("error");
+        });
+
+      
+
+
       $scope.setPregunta = function(){
         $http.post("http://localhost:8000/setPreguntas",{
           pregunta: $scope.newPregunta.pregunta,
-          respuesta: $scope.newPregunta.respuesta,
+          respuesta: $scope.respuesta = [
+            $scope.newPregunta.respuesta1,
+            $scope.newPregunta.respuesta2,
+            $scope.newPregunta.respuesta3,
+            $scope.newPregunta.respuesta4,
+          ],
+          correcta: $scope.correcta = [
+            $scope.newPregunta.correcta1,
+            $scope.newPregunta.correcta2,
+            $scope.newPregunta.correcta3,
+            $scope.newPregunta.correcta4,
+          ],
+          examen_id: $scope.newPregunta.miTipoExamen,
+          
+          /*respuesta1: $scope.newPregunta.respuesta1,
+          respuesta2: $scope.newPregunta.respuesta2,*/
+          //respuesta3: $scope.newPregunta.respuesta3,
           /*email: $scope.newUser.email,
           password: $scope.newUser.password*/
         })
@@ -287,7 +332,7 @@ app.controller("AreasController",function($scope, $http){
           console.log(data);
           $scope.message = "¡Pregunta agregada satisfactoriamente!";
           //$scope.message = "Usuario agregado satisfactoriamente."
-          $scope.preguntas = data.data;
+          $scope.newPregunta = data.data;
           /*$scope.users.push($scope.newUser);*/
           $scope.newPregunta = {};
 
@@ -302,16 +347,30 @@ app.controller("AreasController",function($scope, $http){
         });
       }
 
+      $scope.selectExamen = function(examen){
+    alert('hola mundo');
+    //alert(user);
+    //$scope.editUser = user;
+    //$scope.users.push($scope.newUser);
+    //$scope.users.splice($scope.user);
+    //$scope.users.splice($user, 1);
+  }
+
 
       $scope.selectPregunta = function(pregunta){
         console.log(pregunta);
         //alert(user);
         $scope.editPregunta = pregunta;
+        $location.url('/preguntas/' + $scope.editPregunta.id + '/edit');
         //$scope.users.push($scope.newUser);
         //$scope.users.splice($scope.user);
         //$scope.users.splice($user, 1);
       }
 
+      $scope.selectPreguntadelete = function(pregunta){
+        console.log(pregunta);
+        $scope.editPregunta = pregunta;
+      }
 
       $scope.deletePregunta = function(dato){
         $http.delete("http://localhost:8000/deletePreguntas/"+dato)
@@ -334,6 +393,21 @@ app.controller("AreasController",function($scope, $http){
           $scope.message = "";
           $scope.message_error = "";
         };
+
+        $scope.myFunc = function($dato) {
+
+          $http.get("http://localhost:8000/examenes/"+$dato)
+
+            .then(function(data,response,status){
+              console.log(data);
+              $scope.examenes = data.data;
+              //$scope.mostrarCargando = false;
+            },
+            function(err){
+              console.log(err);
+              //alert("error");
+            });
+        }
 
     })
 

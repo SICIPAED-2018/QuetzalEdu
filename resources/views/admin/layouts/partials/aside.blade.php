@@ -78,7 +78,7 @@
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="#!/cursos">
             <i class="fa fa-ravelry"></i> <span>Gestión de contenidos</span>
             <span class="pull-right-container">
             </span>
@@ -92,7 +92,7 @@
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="#!/pagos">
             <i class="fa fa-shopping-basket"></i> <span>Control de pagos</span>
             <span class="pull-right-container">
             </span>

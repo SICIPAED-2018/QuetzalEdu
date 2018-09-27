@@ -37,17 +37,52 @@ class SimuladorExamenController extends Controller
         );
     }
 
-    public function getExamenes(Request $request,$id){
-        if($request->ajax()){
-            $examenes = Examen::examenes($id);
-            return response()->json($examenes);
-        }
+
+    public function getNiveles(){
+        $niveles = Nivel::all();
+        $niveles->each(function($niveles){
+            $niveles->examenes;
+        });
+        /*$preguntas->each(function($preguntas){
+            $preguntas->examen;
+        });*/
+        return response()->json(
+            $niveles->toArray()
+        );
     }
 
-    public function setPreguntas(Request $request){
+
+    public function getExamenes(Request $request,$id){
+        /*if($request->ajax()){
+            $examenes = Examen::examenes($id);
+            return response()->json($examenes);
+        }*/
+
+        $examenes = Examen::examenes($id);
+            return response()->json($examenes);
+    }
+
+    public function setPreguntas(PreguntaRequest $request){
+
+
         $pregunta = new Pregunta($request->all());
-        $pregunta->examen_id = 1;
+        $pregunta->examen_id = $request->examen_id;
         $pregunta->save();
+
+        $respuesta = $request->all();
+        $correcta=$request->correcta;
+        for($i=0;$i<=3;$i++){
+          $respuesta = new Respuesta();
+          $respuesta->pregunta_id=$pregunta->id;
+          $respuesta->respuesta=$request->respuesta[$i];
+
+          if($request->correcta[$i] === null)
+            $respuesta->correcta=0;
+          else
+            $respuesta->correcta=1;
+          
+            $respuesta->save();
+        }
 
         /*$respuesta = $request->all();
         $correcta=$request->correcta;
@@ -117,6 +152,7 @@ class SimuladorExamenController extends Controller
     public function edit($id)
     {
         //
+        return view('admin.simulador.edit');
     }
 
     /**

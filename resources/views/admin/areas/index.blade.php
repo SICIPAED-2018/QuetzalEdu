@@ -7,7 +7,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="{{url('home')}}"> Home</a></li>
-        <li class="active">Áreas de conocimiento</li>
+        <li class="active"><i class="fa fa-codepen"></i> Áreas de conocimiento</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -150,16 +150,23 @@
 					    </div>
 
 					    <div class="form-group">
+					      <label class="control-label col-sm-2" for="info">Imagen General</label>
+					      <div class="col-sm-10">
+					        <input type="file" class="form-control" id="imagen_general" name="imagen_general" file-model = "newArea.imagen_general" autofocus>
+					      </div>
+					    </div>
+
+					    <div class="form-group">
 					      <label class="control-label col-sm-2" for="info">Información General</label>
 					      <div class="col-sm-10">
-					        <input type="file" class="form-control" id="informacion_general" name="informacion_general" file-model = "editArea.informacion_general">
+					        <input type="file" class="form-control" id="informacion_general" name="informacion_general" file-model = "newArea.informacion_general" autofocus>
 					      </div>
 					    </div>
 
 					    <div class="form-group">
 					      <label class="control-label col-sm-2" for="video">Video General</label>
 					      <div class="col-sm-10">
-					        <input type="file" class="form-control" id="video_general" name="video_general" file-model = "editArea.video_general">
+					        <input type="file" class="form-control" id="video_general" name="video_general" file-model = "newArea.video_general" autofocus>
 					      </div>
 					    </div>
 

@@ -35,16 +35,18 @@
   			</div>
 
   			<div class="col-md-3">
-  				<div class="panel panel-default">
-  					<div class="panel-body" style="padding: 0px;">
-  						<center>
-  							<img src="{{asset('img/contenidos.png')}}" class="img-responsive">
-  						</center>
-  					</div>
-  					<div class="panel-footer" style="background-color: #00612a;">
-  						<h5 style="font-weight: bold;color: #fff;">Gestión de contenidos</h5>
-  					</div>
-  				</div>
+          <a href="#!/cursos">
+    				<div class="panel panel-default">
+    					<div class="panel-body" style="padding: 0px;">
+    						<center>
+    							<img src="{{asset('img/contenidos.png')}}" class="img-responsive">
+    						</center>
+    					</div>
+    					<div class="panel-footer" style="background-color: #00612a;">
+    						<h5 style="font-weight: bold;color: #fff;">Gestión de contenidos</h5>
+    					</div>
+    				</div>
+          </a>
   			</div>
 
   			<div class="col-md-3">
@@ -63,6 +65,7 @@
   			</div>
 
   			<div class="col-md-3">
+          <a href="#!/pagos">
   				<div class="panel panel-default">
   					<div class="panel-body" style="padding: 0px;">
   						<center>
@@ -73,6 +76,7 @@
   						<h5 style="font-weight: bold;color: #fff;">Control de pagos</h5>
   					</div>
   				</div>
+          </a>
   			</div>
 
   		</div>

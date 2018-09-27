@@ -51,52 +51,52 @@
               <br>
             <a href="">
               <div class="col-lg-3">
-                <div class="panel panel-default" style="border-radius: 10px;">
+                <div class="panel panel-default" style="border-radius: 10px;background-color: #c9d697;">
                     <center>
                         <img class="img-responsive" src="{{asset('img/cursos/thumb_1.png')}}" style="border-radius: 10px 10px 0px 0px;">
                     </center>
                     <div class="panel-heading" style="background-color: #8cb441;border-radius: 0px 0px 10px 10px;border-top: solid 5px #fff;padding-left: 14px;">
                         <h5 style="color: #fff;">Competencias docentes</h5>
-                        <a href="" class="btn btn-default" style="background-color: #638742;color: #fff;"> Ver Curso </a>
+                        <a href="{{url('competencias-docentes')}}" class="btn btn-default" style="background-color: #638742;color: #fff;"> Ver Curso </a>
                     </div>
                 </div>
               </div>
             </a>
             <a href="">
               <div class="col-lg-3">
-                <div class="panel panel-default" style="border-radius: 10px;">
+                <div class="panel panel-default" style="border-radius: 10px;background-color: #f0ca7c;">
                     <center>
                         <img class="img-responsive" src="{{asset('img/cursos/thumb_2.png')}}" style="border-radius: 10px 10px 0px 0px;">
                     </center>
                     <div class="panel-heading" style="background-color: #c9d697;border-radius: 0px 0px 10px 10px;border-top: solid 5px #fff;">
                         <h5 style="color: #000;">Estrategias docentes</h5>
-                        <a href="" class="btn btn-default" style="background-color: #bfcf83;color: #fff;"> Ver Curso </a>
+                        <a href="{{url('estrategias-docentes')}}" class="btn btn-default" style="background-color: #bfcf83;color: #fff;"> Ver Curso </a>
                     </div>
                 </div>
               </div>
             </a>
             <a href="">
               <div class="col-lg-3">
-                <div class="panel panel-default" style="border-radius: 10px;">
+                <div class="panel panel-default" style="border-radius: 10px;background-color: #4FA9A2;">
                     <center>
                         <img class="img-responsive" src="{{asset('img/cursos/thumb_4.png')}}" style="border-radius: 10px 10px 0px 0px;">
                     </center>
                     <div class="panel-heading" style="background-color: #f0ca7c;border-radius: 0px 0px 10px 10px;border-top: solid 5px #fff;">
                         <h5 style="color: #000;">Desarrollo y planeación</h5>
-                        <a href="" class="btn btn-default" style="background-color: #ebbf65;color: #fff;"> Ver Curso </a>
+                        <a href="{{url('desarrollo-y-planeacion')}}" class="btn btn-default" style="background-color: #ebbf65;color: #fff;"> Ver Curso </a>
                     </div>
                 </div>
               </div>
             </a>
             <a href="">
               <div class="col-lg-3">
-                <div class="panel panel-default" style="border-radius: 10px;">
+                <div class="panel panel-default" style="border-radius: 10px;background-color: #c9d697;">
                     <center>
                         <img class="img-responsive" src="{{asset('img/cursos/thumb_3.png')}}" style="border-radius: 10px 10px 0px 0px;">
                     </center>
                     <div class="panel-heading" style="background-color: #4FA9A2;border-radius: 0px 0px 10px 10px;border-top: solid 5px #fff;">
                         <h5 style="color: #000;"> Exámenes de oposición</h5>
-                        <a href="" class="btn btn-default" style="background-color: #92CBD5;color: #fff;"> Ver Curso </a>
+                        <a href="{{url('examenes-de-oposicion')}}" class="btn btn-default" style="background-color: #92CBD5;color: #fff;"> Ver Curso </a>
                     </div>
                 </div>
               </div>
@@ -164,15 +164,13 @@
   <!-- /.experiencias  -->
       <div class="container-fluid" id="experiencias" style="margin-top: -25px;padding-top: 55px;">
         <div class="container">
-          <div class="col-lg-12" style="text-align: center;">
+          <div class="col-md-8 col-md-offset-2" style="text-align: center;">
             <h2 style="color: #4FA9A2;font-weight: bold;">Experiencias</h2>
             <br>
-            <div class='black center-block relative shadow-player vimeo z-depth-2'>
-              <div class="video-container video_player">
-                <iframe id="vimeo_player" src="https://player.vimeo.com/video/232551195?api=1&amp;player_id=vimeo_player" width="700" height="400" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="allowfullscreen">
-                </iframe>
-              </div>
-            </div>
+            <video width="700" controls style="width: 100%;height: auto;">
+              <source src="{{asset('img/videos/00_Intro_general_plataforma.mp4')}}" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
           </div>
         </div>
       </div>

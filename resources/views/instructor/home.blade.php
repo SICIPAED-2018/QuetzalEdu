@@ -17,5 +17,73 @@
       </div>
       </div>
 
+
+      <div class="row text-center">
+
+        <div class="col-md-1">
+        </div>
+
+        <div class="col-md-5">
+          <a href="#!/areas">
+            <div class="panel panel-default">
+              <div class="panel-body" style="padding: 0px;">
+                <center>
+                  <img src="{{asset('img/contenidos.png')}}" class="img-responsive">
+                </center>
+              </div>
+              <div class="panel-footer" style="background-color: #8eb341;">
+                <h5 style="font-weight: bold;color: #fff;">Mis cursos</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+
+       <!--  <div class="col-md-3">
+          <a href="#!/cursos">
+            <div class="panel panel-default">
+              <div class="panel-body" style="padding: 0px;">
+                <center>
+                  <img src="{{asset('img/gestion.png')}}" class="img-responsive">
+                </center>
+              </div>
+              <div class="panel-footer" style="background-color: #00612a;">
+                <h5 style="font-weight: bold;color: #fff;">Gestión de grupos</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-3">
+          <a href="#!/users">
+            <div class="panel panel-default">
+              <div class="panel-body" style="padding: 0px;">
+                <center>
+                  <img src="{{asset('img/actividades.png')}}" class="img-responsive">
+                </center>
+              </div>
+              <div class="panel-footer" style="background-color: #29abe2;">
+                <h5 style="font-weight: bold;color: #fff;">Actividades</h5>
+              </div>
+            </div>
+          </a>
+        </div> -->
+
+        <div class="col-md-5">
+          <a href="#!/pagos">
+          <div class="panel panel-default">
+            <div class="panel-body" style="padding: 0px;">
+              <center>
+                <img src="{{asset('img/usuarios.png')}}" class="img-responsive">
+              </center>
+            </div>
+            <div class="panel-footer" style="background-color: #ff9900;">
+              <h5 style="font-weight: bold;color: #fff;">Mis docentes</h5>
+            </div>
+          </div>
+          </a>
+        </div>
+
+      </div>
+
     </section>
       <!-- /.content -->

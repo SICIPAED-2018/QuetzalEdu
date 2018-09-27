@@ -63,8 +63,14 @@
 		      	<!-- <td>@{{user.id}}</td> -->
 		        <td>@{{pregunta.pregunta}}</td>
 		        <td>@{{pregunta.examen.tipo_examen}}</td>
-		        <td style="text-align: center"><a ng-click="selectPregunta(pregunta)" class="btn btn-warning" data-toggle="modal" data-target="#myModalEdit"> <span class="glyphicon glyphicon-edit"></span> Editar</a>
-		        <a ng-click="selectPregunta(pregunta)" class="btn btn-danger" data-toggle="modal" data-target="#myModalDelete"><span class="glyphicon glyphicon-trash"></span> Eliminar</a></td>
+		        <td style="text-align: center">
+
+		        <a ng-click="selectPregunta(pregunta)" class="btn btn-warning" > <span class="glyphicon glyphicon-edit"></span> Editar</a>
+
+		        <a ng-click="selectPreguntadelete(pregunta)" class="btn btn-danger" data-toggle="modal" data-target="#myModalDelete"><span class="glyphicon glyphicon-trash"></span> Eliminar</a>
+
+
+		    </td>
 		      </tr>
 		    </tbody>
   		</table>

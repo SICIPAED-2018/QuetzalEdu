@@ -5,7 +5,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="{{asset('img/foto_perfil.jpeg')}}" class="img-circle" alt="User Image">
+          <img src="{{asset('img/avatar2.png')}}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>{{Auth::user()->name}}</p>
@@ -59,6 +59,48 @@
         <li>
           <a href="{{url('/home')}}">
             <i class="fa fa-home" style="font-size: 18px;"></i> <span>Home</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#!/users">
+            <i class="fa fa-ravelry"></i> <span>Mis cursos</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#!/users">
+            <i class="fa fa-users"></i> <span>Gestión de grupos</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#!/users">
+            <i class="fa fa-file-text-o"></i> <span>Actividades</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#!/users">
+            <i class="fa fa-th-list"></i> <span>Mis docentes</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#!/preguntas">
+            <i class="fa fa-connectdevelop"></i> <span>Banco de preguntas</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#!/preguntas">
+            <i class="fa fa-file-pdf-o"></i> <span>Manual de usuario</span>
             <span class="pull-right-container">
             </span>
           </a>

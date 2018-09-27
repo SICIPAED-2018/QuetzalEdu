@@ -47,9 +47,9 @@
 
                 <p>
                   {{Auth::user()->name}}
-                  <small>administrador<br>
-                    {{Auth::user()->email}}
-                  </small>
+                  <h5 style="color: #fff;">
+                    administrador
+                  </h5>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -67,8 +67,9 @@
               <!-- Menu Footer-->
               <li class="user-footer" style="border-top: solid 1px #fff;">
                 <div class="pull-left">
-                  <a href="" class="btn btn-warning btn-flat"><i class="glyphicon glyphicon-edit"></i> Perfil</a>
+                  <a href="" class="btn btn-warning btn-flat"><i class="glyphicon glyphicon-edit"></i> Contraseña</a>
                 </div>
+
                 <div class="pull-right">
                   <a href="{{ route('logout') }}" class="btn btn-danger btn-flat"
                     onclick="event.preventDefault();

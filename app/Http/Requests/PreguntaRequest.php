@@ -26,6 +26,9 @@ class PreguntaRequest extends FormRequest
         return [
             //
             'pregunta'=>'required',
+            'examen_id'=>'required',
+            'correcta'=>'required',
+            'respuesta'=>'required',
         ];
     }
 }

@@ -17,6 +17,23 @@ Route::get('/', function () {
     return view('index.index');
 });
 
+Route::get('/competencias-docentes', function () {
+    return view('index.cursos.competencias_docentes');
+});
+
+Route::get('/estrategias-docentes', function () {
+    return view('index.cursos.estrategias_docentes');
+});
+
+Route::get('/desarrollo-y-planeacion', function () {
+    return view('index.cursos.desarrollo_y_planeacion');
+});
+
+Route::get('/examenes-de-oposicion', function () {
+    return view('index.cursos.examenes_de_oposicion');
+});
+
+
 //ACCESOS AL SISTEMA
 
 Auth::routes();
@@ -28,6 +45,8 @@ Route::get('logout', function () {
     Auth::logout();
     return Redirect::to('/');
 });
+
+
 
 //SPA ADMINISTRADOR E INSTRUCTOR CON ANGULARJS
 Route::get('/inicio', function () {
@@ -73,9 +92,19 @@ Route::resource('/preguntas', 'SimuladorExamenController');
 
 Route::get('getPreguntas', 'SimuladorExamenController@getPreguntas');
 
+Route::get('getNiveles', 'SimuladorExamenController@getNiveles');
+
 Route::post('setPreguntas', 'SimuladorExamenController@setPreguntas');
 
 Route::delete('deletePreguntas/{id}', 'SimuladorExamenController@deletePreguntas');
+
+//GESTION DE CONTENIDOS
+
+Route::resource('/cursos', 'ContenidoCursoController');
+
+//GESTION DE PAGOS
+
+Route::resource('/pagos', 'PagosController');
 
 //LOGIN CON FACEBOOK
 

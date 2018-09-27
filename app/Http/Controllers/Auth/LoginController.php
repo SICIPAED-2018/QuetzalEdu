@@ -48,14 +48,20 @@ class LoginController extends Controller
 
     public function handleProviderCallback()
     {
-        
+
         //$user->token;
         $user_facebook = Socialite::driver('facebook')->user();
+
+   
 
         //busca si existe el usuario en la base de datos
         $user = User::where('facebook_id',$user_facebook->getId())->first();
 
+
+
         if(!$user){
+
+
 
             /*User::create([
                 'name' => $user_facebook->getName(),
@@ -70,6 +76,8 @@ class LoginController extends Controller
             $user->facebook_id = $user_facebook->getId();
             $user->type = 3;
             $user->save();
+
+             dd('hola');
 
             /*auth()->login($user);
             return Redirect::to('/home');*/ 

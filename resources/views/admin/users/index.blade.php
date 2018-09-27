@@ -6,13 +6,13 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="{{url('home')}}"> Home</a></li>
-        <li class="active">Gestión de usuarios</li>
+        <li class="active"><i class="fa fa-users"></i> Gestión de usuarios</li>
       </ol>
     </section>
     <!-- Main content -->
     <section class="content">
 		 <div class="panel panel-default">
-		 	<div class="panel-heading" style="background-color: #285675;color: #fff;">Lista de usuarios</div>
+		 	<div class="panel-heading" >Lista de usuarios</div>
 		 <div class="panel-body">
 		<div class="alert alert-success" ng-if="message">
 		   <a class="close"  ng-click="clearMessage()">&times;</a>
@@ -57,7 +57,7 @@
 				   	 <h5> <span class="glyphicon glyphicon-info-sign"></span> No se encontraron resultados.</h5>
 				</div>
 		      </div>
-		      <tr ng-repeat="user in users | filter:search:startsWith">
+		      <tr ng-repeat="user in users | filter:search:startsWith | orderBy:'name'">
 		      	<!-- <td style="text-align: center"><input type="checkbox" name=""></td> -->
 		      	<td><label class="label label-default">@{{$index+1}}</label></td>
 		      	<!-- <td>@{{user.id}}</td> -->
@@ -67,9 +67,9 @@
 		        <td ng-if="user.type == 2"><span class="label label-info">Instructor</span></td>
 		        <td ng-if="user.type == 3"><span class="label label-success">Docente participante</span></td>
 		        <td style="text-align: center"><a ng-click="selectUser(user)" class="btn btn-warning" data-toggle="modal" data-target="#myModalEdit"> <span class="glyphicon glyphicon-edit"></span> Editar</a>
-		        <a ng-if="user.type == 2" ng-click="selectUser(user)" class="btn btn-danger" data-toggle="modal" data-target="#myModalDelete"><span class="glyphicon glyphicon-trash"></span> Eliminar</a>
-		        <a ng-if="user.type == 3" ng-click="selectUser(user)" class="btn btn-danger" data-toggle="modal" data-target="#myModalDelete"><span class="glyphicon glyphicon-trash"></span> Eliminar</a>
+		        <a ng-if="user.type != 1" ng-click="selectUser(user)" class="btn btn-danger" data-toggle="modal" data-target="#myModalDelete"><span class="glyphicon glyphicon-trash"></span> Eliminar</a>
 		        <a ng-if="user.type == 1" class="btn btn-danger" data-toggle="modal" data-target="#myModalDeleteAdmin"><span class="glyphicon glyphicon-trash"></span> Eliminar</a>
+
 				</td>
 		      </tr>
 		      <div data-pagination="" data-num-pages="numPages()" 
@@ -92,7 +92,7 @@
 		      <div class="modal-content">
 		        <div class="modal-header" style="background-color: #285675;color: #fff;">
 		          <button type="button" class="close" data-dismiss="modal" style="color: #fff;">&times;</button>
-		          <h4 class="modal-title"><span class="glyphicon glyphicon-plus-sign"></span> &nbsp;Agregar usuario</h4>
+		          <h4 class="modal-title"><span class="glyphicon glyphicon-plus-sign"></span> &nbsp;Agregar instructor</h4>
 		        </div>
 		        <div class="modal-body">
 			        <form class="form-horizontal">
@@ -188,19 +188,19 @@
 			</div>
 
 			<div class="modal fade" id="myModalDeleteAdmin" role="dialog">
-		    <div class="modal-dialog">
-		      <!-- Modal content-->
-		      <div class="modal-content">
-		        <div class="modal-header">
-		          <button type="button" class="close" data-dismiss="modal">&times;</button>
-		          <h4 class="modal-title"><span class="glyphicon glyphicon-trash"></span> &nbsp;Eliminar usuario</h4>
-		        </div>
-		        <div class="modal-body">
-		         	No es posible eliminar al administrador del sistema
-		        </div> 
-		        <div class="modal-footer">
-		          <button type="button" class="btn btn-default" data-dismiss="modal">Aceptar</button>
-		        </div>
-		      </div>
-		    </div>
+			    <div class="modal-dialog">
+			      <!-- Modal content-->
+			      <div class="modal-content">
+			        <div class="modal-header">
+			          <button type="button" class="close" data-dismiss="modal">&times;</button>
+			          <h4 class="modal-title"><span class="glyphicon glyphicon-trash"></span> &nbsp;Eliminar usuario</h4>
+			        </div>
+			        <div class="modal-body">
+			         	No es posible eliminar al administrador del sistema
+			        </div> 
+			        <div class="modal-footer">
+			          <button type="button" class="btn btn-default" data-dismiss="modal">Aceptar</button>
+			        </div>
+			      </div>
+			    </div>
 			</div>

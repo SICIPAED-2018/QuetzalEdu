@@ -35,7 +35,7 @@
   			</div>
 
   			<div class="col-md-3">
-          <a href="#!/cursos">
+          <a href="#!/contenido">
     				<div class="panel panel-default">
     					<div class="panel-body" style="padding: 0px;">
     						<center>

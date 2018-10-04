@@ -78,7 +78,7 @@
           </a>
         </li>
         <li>
-          <a href="#!/cursos">
+          <a href="#!/contenido">
             <i class="fa fa-ravelry"></i> <span>Gestión de contenidos</span>
             <span class="pull-right-container">
             </span>

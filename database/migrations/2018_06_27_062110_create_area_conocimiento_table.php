@@ -18,6 +18,7 @@ class CreateAreaConocimientoTable extends Migration
             $table->string('area_conocimiento');
             $table->string('informacion_general');
             $table->string('video_general');
+            $table->string('imagen_general');
             $table->timestamps();
 
         });

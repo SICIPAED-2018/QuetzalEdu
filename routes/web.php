@@ -47,6 +47,13 @@ Route::get('logout', function () {
 });
 
 
+//LOGIN CON FACEBOOK
+
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('facebook.login');
+
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+
+
 
 //SPA ADMINISTRADOR E INSTRUCTOR CON ANGULARJS
 Route::get('/inicio', function () {
@@ -98,26 +105,29 @@ Route::post('setPreguntas', 'SimuladorExamenController@setPreguntas');
 
 Route::delete('deletePreguntas/{id}', 'SimuladorExamenController@deletePreguntas');
 
+
+//SELECT DINÁMICO
+
+Route::get('examenes/{id}','SimuladorExamenController@getExamenes');
+
+Route::get('preguntas/examenes/{id}','SimuladorExamenController@getExamenes');
+
+
 //GESTION DE CONTENIDOS
 
-Route::resource('/cursos', 'ContenidoCursoController');
+Route::resource('/contenido', 'ContenidoCursoController');
+
+Route::get('getContenidos', 'ContenidoCursoController@getContenidos');
+
+Route::post('setContenidos', 'ContenidoCursoController@setContenidos');
+
+Route::delete('deleteContenidos/{id}', 'ContenidoCursoController@deleteContenidos');
 
 //GESTION DE PAGOS
 
 Route::resource('/pagos', 'PagosController');
 
-//LOGIN CON FACEBOOK
 
-Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('facebook.login');
-
-Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
-
-
-
-
-Route::get('examenes/{id}','SimuladorExamenController@getExamenes');
-
-Route::get('preguntas/examenes/{id}','SimuladorExamenController@getExamenes');
 
 
 

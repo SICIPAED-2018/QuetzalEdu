@@ -29,9 +29,13 @@ app.config(function($routeProvider) {
     templateUrl : 'preguntas/preguntaId/edit',
     controller  : 'SimuladorController'
   })
-  .when('/cursos', {
-    templateUrl : 'cursos',
-    controller  : ''
+  .when('/contenido', {
+    templateUrl : 'contenido',
+    controller  : 'ContenidoCursoController'
+  })
+  .when('/contenido/create', {
+    templateUrl : 'contenido/create',
+    controller  : 'ContenidoCursoController'
   })
   .when('/pagos', {
     templateUrl : 'pagos',
@@ -141,6 +145,161 @@ app.controller("UsersController",function($scope, $http){
     $scope.message_error = "";
   };
   });
+
+
+/********************ContenidoCursoController********************/
+
+app.controller("ContenidoCursoController",function($scope, $http, $location){
+  //$scope.mostrarCargando = true;
+  console.log("ContenidoCursoController");
+  $scope.contenidos = [];
+  $scope.newContenido = [];
+  $scope.editContenido = [];
+  $scope.message = "";
+  $scope.message_error = "";
+
+  $http.get("http://localhost:8000/getContenidos")
+    .then(function(data){
+      console.log(data);
+      $scope.contenidos = data.data;
+      //$scope.mostrarCargando = false;
+    },
+    function(err){
+      console.log(err);
+      //alert("error");
+    });
+
+
+    $http.get("http://localhost:8000/getAreas")
+    .then(function(data){
+      console.log(data);
+      $scope.areas = data.data;
+      //$scope.mostrarCargando = false;
+    },
+    function(err){
+      console.log(err);
+      //alert("error");
+    });
+
+    $scope.setContenido = function(){
+      var fd = new FormData();
+      //var areaCon = $scope.newArea.area_conocimiento;
+      var titulo = $scope.newContenido.titulo;
+      fd.append('titulo', titulo);
+      var area_id = $scope.newContenido.id;
+      fd.append('area_id', area_id);
+      var descripcion = $scope.newContenido.descripcion;
+      fd.append('descripcion', descripcion);
+
+      var informacion = $scope.newContenido.informacion;
+      fd.append('informacion', informacion);
+
+      var video = $scope.newContenido.video;
+      fd.append('video', video);
+
+
+      var actividad = $scope.newContenido.actividad;
+      fd.append('actividad', actividad);
+
+      var formato = $scope.newContenido.formato;
+      fd.append('formato', formato);
+
+
+      var mochila = $scope.newContenido.mochila;
+      fd.append('mochila', mochila);
+
+
+
+      //var infoGen = $scope.newArea.informacion_general;
+      //var areaCon = $scope.newArea.area_conocimiento;
+      //var areaImg = $scope.newArea.imagen_general;
+
+      //alert(infoGen);
+      //var vidGen = $scope.newArea.video_general;
+      //var imgGen = $scope.newArea.imagen_general;
+      //fd.append('area_conocimiento', areaCon);
+      ///fd.append('informacion_general',infoGen);
+      //fd.append('area_conocimiento', areaCon);
+      //fd.append('video_general',vidGen);
+      //fd.append('imagen_general',imgGen);
+
+      $http.post("http://localhost:8000/setContenidos", fd,{
+      /*area_conocimiento: $scope.newArea.area_conocimiento,
+      informacion_general: $scope.newArea.informacion_general,
+      video_general: $scope.newArea.video_general*/
+      file: angular.identity,
+      headers: {'Content-Type': undefined},
+      //area_conocimiento: $scope.newArea.area_conocimiento,
+    })
+    .then(function(data,status,headers,config){
+      //console.log($scope.newUser);
+      console.log(data);
+      $scope.message = "Contenido de curso "+$scope.newContenido.titulo+" agregado satisfactoriamente!";
+      //$scope.message = "Usuario agregado satisfactoriamente."
+      $scope.contenidos = data.data;
+      /*$scope.users.push($scope.newUser);*/
+      /*$scope.newArea.area_conocimiento = null;*/
+      $scope.newContenido = {};
+
+      $location.path("/contenido");
+    },
+    function(err){
+      console.log(err);
+      $scope.message_error = err.data.errors;
+      $scope.message = "";
+      //alert("error");
+    });
+    }
+
+    $scope.selectContenido = function(contenido){
+    console.log(contenido);
+    //alert(user);
+    $scope.editContenido = contenido;
+    //$scope.users.push($scope.newUser);
+    //$scope.users.splice($scope.user);
+    //$scope.users.splice($user, 1);
+  }
+
+  $scope.updateArea = function(dato){
+    //$scope.editUser = user;
+    $http.put("http://localhost:8000/updateAreas/"+dato,{
+      area_conocimiento: $scope.editArea.area_conocimiento,
+    })
+    .then(function(data,status,headers,config){
+             // success callback
+             //alert('llego aqui');
+             console.log(data);
+             $scope.message = "¡Area "+$scope.editArea.area_conocimiento+" editada satisfactoriamente!";
+             //$scope.message = "Usuario editado satisfactoriamente."
+             $scope.message_error = "";
+    }, 
+    function(err){
+      alert("error");
+      $scope.message = err.data;
+    });
+    } 
+
+    $scope.deleteContenido = function(dato){
+    $http.delete("http://localhost:8000/deleteContenidos/"+dato)
+    .then(function(data,status,headers,config){
+             // success callback
+             //alert('llego aqui');
+             //elimina en tiempo real
+             $scope.contenidos.splice($scope.contenidos.indexOf($scope.editContenido), 1);
+             console.log(data);
+             $scope.message = "¡Contenido de curso "+$scope.editContenido.titulo+" eliminado satisfactoriamente!";
+             //$scope.message = "Usuario eliminado satisfactoriamente."
+    }, 
+    function(err){
+      alert("error");
+    });
+    };
+
+    $scope.clearMessage = function(){
+      $scope.message = "";
+      $scope.message_error = "";
+    };
+    })
 
 
 /********************AreasController********************/

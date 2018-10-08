@@ -150,6 +150,13 @@ app.controller("UsersController",function($scope, $http){
 /********************ContenidoCursoController********************/
 
 app.controller("ContenidoCursoController",function($scope, $http, $location){
+
+  /* filtro x primera letra */
+  $scope.startsWith =function(actual, expected) {
+    var lowerStr = (actual + "").toLowerCase();
+    return lowerStr.indexOf(expected.toLowerCase()) === 0;
+  };
+  
   //$scope.mostrarCargando = true;
   console.log("ContenidoCursoController");
   $scope.contenidos = [];
@@ -200,6 +207,8 @@ app.controller("ContenidoCursoController",function($scope, $http, $location){
 
       var actividad = $scope.newContenido.actividad;
       fd.append('actividad', actividad);
+
+      console.log(actividad);
 
       var formato = $scope.newContenido.formato;
       fd.append('formato', formato);

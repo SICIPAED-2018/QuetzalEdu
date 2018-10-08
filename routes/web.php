@@ -60,8 +60,8 @@ Route::get('/inicio', function () {
 	if(Auth::user()->type==1){
     	return view('admin.home');
 	}
-	else if(Auth::user()->type==2){
-    	return view('instructor.home');
+	else if(Auth::user()->type==3){
+    	return view('cliente.home');
 	}
 });
 
@@ -126,6 +126,14 @@ Route::delete('deleteContenidos/{id}', 'ContenidoCursoController@deleteContenido
 //GESTION DE PAGOS
 
 Route::resource('/pagos', 'PagosController');
+
+
+
+//Seguimiento de cursos
+
+Route::get('showCurso/{id}', 'SeguimientoCursoController@show');
+
+Route::get('getCurso/{id}', 'SeguimientoCursoController@getCurso');
 
 
 

@@ -81,13 +81,13 @@ class ContenidoCursoController extends Controller
         $file = $request->file('video');
         $nombre = $file->getClientOriginalName();
 
-        $path = public_path().'/Contenidos/'.$nom.'/'.$titulo.'/InformacionGeneral';
+        $path = public_path().'/Contenidos/'.$nom.'/'.$titulo.'/VideoGeneral';
 
 
-        $pathvideo = public_path().'/Contenidos/'.$nom.'/'.$titulo.'/InformacionGeneral'.$nombre;
+        $pathvideo = public_path().'/Contenidos/'.$nom.'/'.$titulo.'/VideoGeneral'.$nombre;
 
         
-        $path_video = 'Contenidos/'.$nom.'/'.$titulo.'/InformacionGeneral/'.$nombre;
+        $path_video = 'Contenidos/'.$nom.'/'.$titulo.'/VideoGeneral/'.$nombre;
 
         $file->move($path, $nombre);
         }
@@ -102,13 +102,13 @@ class ContenidoCursoController extends Controller
         $file = $request->file('actividad');
         $nombre = $file->getClientOriginalName();
 
-        $path = public_path().'/Contenidos/'.$nom.'/'.$titulo.'/InformacionGeneral';
+        $path = public_path().'/Contenidos/'.$nom.'/'.$titulo.'/Actividades';
 
 
-        $pathactividad = public_path().'/Contenidos/'.$nom.'/'.$titulo.'/InformacionGeneral'.$nombre;
+        $pathactividad = public_path().'/Contenidos/'.$nom.'/'.$titulo.'/Actividades'.$nombre;
 
         
-        $path_actividad = 'Contenidos/'.$nom.'/'.$titulo.'/InformacionGeneral/'.$nombre;
+        $path_actividad = 'Contenidos/'.$nom.'/'.$titulo.'/Actividades/'.$nombre;
 
         $file->move($path, $nombre);
         }
@@ -126,13 +126,13 @@ class ContenidoCursoController extends Controller
         $file = $request->file('formato');
         $nombre = $file->getClientOriginalName();
 
-        $path = public_path().'/Contenidos/'.$nom.'/'.$titulo.'/InformacionGeneral';
+        $path = public_path().'/Contenidos/'.$nom.'/'.$titulo.'/Formatos_Evaluacion';
 
 
-        $pathformato = public_path().'/Contenidos/'.$nom.'/'.$titulo.'/InformacionGeneral'.$nombre;
+        $pathformato = public_path().'/Contenidos/'.$nom.'/'.$titulo.'/Formatos_Evaluacion'.$nombre;
 
         
-        $path_formato = 'Contenidos/'.$nom.'/'.$titulo.'/InformacionGeneral/'.$nombre;
+        $path_formato = 'Contenidos/'.$nom.'/'.$titulo.'/Formatos_Evaluacion/'.$nombre;
 
         $file->move($path, $nombre);
         }
@@ -151,13 +151,13 @@ class ContenidoCursoController extends Controller
         $file = $request->file('mochila');
         $nombre = $file->getClientOriginalName();
 
-        $path = public_path().'/Contenidos/'.$nom.'/'.$titulo.'/InformacionGeneral';
+        $path = public_path().'/Contenidos/'.$nom.'/'.$titulo.'/Mochila';
 
 
-        $pathmochila = public_path().'/Contenidos/'.$nom.'/'.$titulo.'/InformacionGeneral'.$nombre;
+        $pathmochila = public_path().'/Contenidos/'.$nom.'/'.$titulo.'/Mochila'.$nombre;
 
         
-        $path_mochila = 'Contenidos/'.$nom.'/'.$titulo.'/InformacionGeneral/'.$nombre;
+        $path_mochila = 'Contenidos/'.$nom.'/'.$titulo.'/Mochila/'.$nombre;
 
         $file->move($path, $nombre);
         }

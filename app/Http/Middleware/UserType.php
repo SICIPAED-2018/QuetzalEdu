@@ -17,10 +17,10 @@ class UserType
     {
         if(Auth::user()->type==1)
             return response()->view('admin.layouts.main');
-        if(Auth::user()->type==2)
-            return response()->view('instructor.layouts.main');
         if(Auth::user()->type==3)
-            return response()->view('cliente.home');
+            return response()->view('cliente.layouts.main');
+        if(Auth::user()->type==2)
+            return response()->view('cliente.layouts.main');
         return $next($request);
     }
 }

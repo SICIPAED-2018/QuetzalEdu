@@ -10,4 +10,10 @@ class Actividad extends Model
     protected $table = 'actividad';
 
 	protected $fillable = ['actividad','contenidos_curso_id'];
+
+	public function curso(){
+
+    	return $this->belongsTo('App\Curso');
+
+    }
 }

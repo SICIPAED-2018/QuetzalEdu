@@ -15,4 +15,9 @@ class ContenidoCurso extends Model
     	return $this->belongsTo('App\Area');
     }
 
+    public function actividades(){
+
+    	return $this->hasMany('App\Actividad');
+    }
+
 }

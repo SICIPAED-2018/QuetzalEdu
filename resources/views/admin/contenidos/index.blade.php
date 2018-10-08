@@ -34,7 +34,7 @@
 			      <span class="input-group-btn">
 			        <button class="btn btn-default" type="button"> <span class="glyphicon glyphicon-search"></span></button>
 			      </span>
-			      <input type="text" class="form-control" placeholder="Nombre" ng-model="search.area.area_conocimiento">
+			      <input type="text" class="form-control" placeholder="Nombre" ng-model="search.titulo">
 			    </div>
 			</div>
 		</div>
@@ -59,7 +59,7 @@
 				   	 <h5> <span class="glyphicon glyphicon-info-sign"></span> No se encontraron resultados.</h5>
 				</div>
 		      </div>
-		      <tr ng-repeat="contenido in contenidos | filter:search:strict">
+		      <tr ng-repeat="contenido in contenidos | filter:search:startsWith">
 		      	<!-- <td style="text-align: center"><input type="checkbox" name=""></td> -->
 		      	<td><label class="label label-default">@{{$index+1}}</label></td>
 		      	<!-- <td>@{{user.id}}</td> -->

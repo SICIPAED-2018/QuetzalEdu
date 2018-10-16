@@ -88,10 +88,10 @@
               </div>
 
               <div class="form-group">
-                <input type="checkbox" name="" style="margin-left: 5px;" checked> Acepto términos y condiciones.
+                <input type="checkbox" name="" style="margin-left: 5px;" required=""> Acepto términos y condiciones.
               </div>
 
-              <button class="btn btn-danger"> Cancelar</button>
+              <a href="{{ url('/') }}" class="btn btn-danger">Cancelar</a>
               <input type="submit" name="" class="btn btn-success" style="color: #fff;" value="Registrarse">
               </form>
               <br>

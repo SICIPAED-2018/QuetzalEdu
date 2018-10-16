@@ -9,5 +9,11 @@ class Mochila extends Model
     //
     protected $table = 'mochila';
 
-	protected $fillable = ['mochila','competencia_id'];
+	protected $fillable = ['mochila','contenido_curso_id'];
+
+	public function curso(){
+
+    	return $this->belongsTo('App\Competencia');
+
+    }
 }

@@ -57,7 +57,7 @@
 				   	 <h5> <span class="glyphicon glyphicon-info-sign"></span> No se encontraron resultados.</h5>
 				</div>
 		      </div>
-		      <tr ng-repeat="area in areas | filter:search:strict">
+		      <tr ng-repeat="area in areas | filter:search:startsWith">
 		      	<!-- <td style="text-align: center"><input type="checkbox" name=""></td> -->
 		      	<td><label class="label label-default">@{{$index+1}}</label></td>
 		      	<!-- <td>@{{user.id}}</td> -->

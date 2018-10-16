@@ -117,7 +117,7 @@ class ContenidoCursoController extends Controller
 
         $actividad->actividad = $path_actividad;
 
-        $actividad->contenidos_curso_id = $contenido->id;
+        $actividad->contenido_curso_id = $contenido->id;
 
         $actividad->save();
 
@@ -142,7 +142,7 @@ class ContenidoCursoController extends Controller
 
         $formato->formato_evaluacion = $path_formato;
 
-        $formato->contenidos_curso_id = $contenido->id;
+        $formato->contenido_curso_id = $contenido->id;
 
         $formato->save();
 
@@ -166,7 +166,7 @@ class ContenidoCursoController extends Controller
 
         $mochila->mochila = $path_mochila;
 
-        $mochila->contenidos_curso_id = $contenido->id;
+        $mochila->contenido_curso_id = $contenido->id;
 
         $mochila->save();
 

@@ -20,4 +20,9 @@ class ContenidoCurso extends Model
     	return $this->hasMany('App\Actividad');
     }
 
+    public function mochila(){
+
+    	return $this->hasMany('App\Mochila');
+    }
+
 }

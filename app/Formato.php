@@ -9,5 +9,5 @@ class Formato extends Model
     //
     protected $table = 'formato_evaluacion';
 
-	protected $fillable = ['formato_evaluacion','contenidos_curso_id'];
+	protected $fillable = ['formato_evaluacion','contenido_curso_id'];
 }

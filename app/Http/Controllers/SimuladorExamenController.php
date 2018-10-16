@@ -43,9 +43,6 @@ class SimuladorExamenController extends Controller
         $niveles->each(function($niveles){
             $niveles->examenes;
         });
-        /*$preguntas->each(function($preguntas){
-            $preguntas->examen;
-        });*/
         return response()->json(
             $niveles->toArray()
         );

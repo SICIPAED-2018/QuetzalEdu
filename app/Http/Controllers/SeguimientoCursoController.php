@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Area;
 
+use App\ContenidoCurso;
+
 class SeguimientoCursoController extends Controller
 {
     /**
@@ -26,6 +28,19 @@ class SeguimientoCursoController extends Controller
 
         return response()->json(
             $area->toArray()
+        );
+    }
+
+
+    public function getContenido($id){
+        $contenido = ContenidoCurso::find($id);
+        
+        
+        $contenido->actividades;
+        $contenido->mochila;
+
+        return response()->json(
+            $contenido->toArray()
         );
     }
 
@@ -60,6 +75,15 @@ class SeguimientoCursoController extends Controller
     {
         //
          return view('cliente.cursos.index');
+        /*return response()->json(
+            $curso->toArray()
+        );*/
+    }
+
+    public function showContenido($id)
+    {
+        //
+         return view('cliente.contenidos.index');
         /*return response()->json(
             $curso->toArray()
         );*/

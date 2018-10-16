@@ -9,9 +9,10 @@
     <link rel="stylesheet" type="text/css" href="{{asset('bootstrap-3.3.7/css/bootstrap-3.3.7-dist.min.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{asset('font-awesome-4.7.0/css/font-awesome.min.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{asset('css/loading-bar.css')}}">
 	<title>QuetzalEdu - @yield('title', 'Default')</title>
 </head>
-<body >
+<body style="margin-top: 65px;">
 		<header>
 			@include('cliente.layouts.partials.nav')
 		</header>

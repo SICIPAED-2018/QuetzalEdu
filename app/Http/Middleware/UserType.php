@@ -20,7 +20,7 @@ class UserType
         if(Auth::user()->type==3)
             return response()->view('cliente.layouts.main');
         if(Auth::user()->type==2)
-            return response()->view('cliente.layouts.main');
+            return response()->view('instructor.layouts.main');
         return $next($request);
     }
 }

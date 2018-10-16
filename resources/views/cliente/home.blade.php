@@ -1,5 +1,5 @@
 
-      <div class="container-fluid" style="padding-top: 80px;">
+      <div class="container-fluid">
         <div class="row">
           <div class="col-md-3">
             <div class="panel panel-default" style="background: #285675;">
@@ -14,7 +14,7 @@
                    </span> &nbsp;Editar perfil</li>
                   <li><i class="fa fa-circle text-success"></i> &nbsp;Online</li>
                   <li><span class="glyphicon glyphicon-envelope" aria-hidden="true" style="color: #fff;">
-                  </span> &nbsp;mramírez18@gmail.com</li>
+                  </span> &nbsp;{{ Auth::user()->email }}</li>
                 </ul>
               </div>
               </div>

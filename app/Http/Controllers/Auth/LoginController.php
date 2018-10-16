@@ -77,8 +77,6 @@ class LoginController extends Controller
             $user->type = 3;
             $user->save();
 
-             dd('hola');
-
             /*auth()->login($user);
             return Redirect::to('/home');*/ 
         }

@@ -60,7 +60,10 @@ Route::get('/inicio', function () {
 	if(Auth::user()->type==1){
     	return view('admin.home');
 	}
-	else if(Auth::user()->type==3){
+    if(Auth::user()->type==2){
+        return view('instructor.home');
+    }
+	if(Auth::user()->type==3){
     	return view('cliente.home');
 	}
 });
@@ -134,6 +137,10 @@ Route::resource('/pagos', 'PagosController');
 Route::get('showCurso/{id}', 'SeguimientoCursoController@show');
 
 Route::get('getCurso/{id}', 'SeguimientoCursoController@getCurso');
+
+Route::get('showContenido/{id}', 'SeguimientoCursoController@showContenido');
+
+Route::get('getContenido/{id}', 'SeguimientoCursoController@getContenido');
 
 
 

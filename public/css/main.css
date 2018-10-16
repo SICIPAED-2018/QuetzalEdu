@@ -303,6 +303,11 @@
 	/******** responsive ********/
 	@media screen and (max-width: 900px){
 
+	.team{
+
+		display: none;
+	}
+
 	.navbar-default .navbar-nav>li>a{
 	    font-size: 10px;
 	    padding-left: 5px;

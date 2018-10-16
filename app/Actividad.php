@@ -9,11 +9,11 @@ class Actividad extends Model
     //
     protected $table = 'actividad';
 
-	protected $fillable = ['actividad','contenidos_curso_id'];
+	protected $fillable = ['actividad','contenido_curso_id'];
 
-	public function curso(){
+	public function contenido(){
 
-    	return $this->belongsTo('App\Curso');
+    	return $this->belongsTo('App\ContenidoCurso');
 
     }
 }

@@ -36,6 +36,12 @@
       			</div>
 			</div>
 			@yield('contenido')
+			<footer class="main-footer">
+			    <div class="pull-right hidden-xs">
+			      <b>Version</b> 2.0
+			    </div>
+			    <strong>Copyright &copy; 2018 <a href="{{url('/home')}}">QuetzalEdu</a>.</strong> &nbsp;Algunos derechos reservados
+  			</footer>
 		</section>
 	</div>
 	<script src="{{ asset('bower_components/jquery/dist/jquery.min.js')}}"></script>

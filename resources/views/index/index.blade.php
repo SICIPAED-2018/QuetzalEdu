@@ -152,7 +152,7 @@
             </div>
             <div class="row" style="text-align: justify;">
               <div class="col-lg-6" style="text-align: right;">
-                <img src="{{asset('img/team.png')}}" style="margin-top: -200px;" class="img-responsive">
+                <img src="{{asset('img/team.png')}}" style="margin-top: -200px;" class="img-responsive team">
               </div>
               <div class="col-lg-6">
               </div>

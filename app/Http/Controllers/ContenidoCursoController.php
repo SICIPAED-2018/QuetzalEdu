@@ -98,6 +98,10 @@ class ContenidoCursoController extends Controller
 
         //actividades 
 
+        $hola = $request->file('actividad');
+
+        dd($hola);
+
         if($request->file('actividad')) {
         $file = $request->file('actividad');
         $nombre = $file->getClientOriginalName();

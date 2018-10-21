@@ -38,6 +38,7 @@ class SeguimientoCursoController extends Controller
         
         $contenido->actividades;
         $contenido->mochila;
+        $contenido->area;
 
         return response()->json(
             $contenido->toArray()

@@ -1,3 +1,9 @@
+
+
+
+<h1>@{{contenido.area.area_conocimiento}}</h1>
+
+
 <h1> @{{contenido.titulo}}</h1>
 
 <h3> @{{contenido.descripcion}}</h3>

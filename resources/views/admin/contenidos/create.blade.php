@@ -48,7 +48,8 @@
                       </div>
                       <div class="form-group">
                         <label>Actividades</label>
-                        <input type="file" name="" class="form-control" file-model = "newContenido.actividad" multiple="">
+                        <!-- <input type="file" name="" class="form-control" file-model = "newContenido.actividad" multiple=""> -->
+                        <input type="file" ng-file-multiple="newContenido.actividad" multiple />
                       </div>
                       <div class="form-group">
                         <label>Formatos</label>
